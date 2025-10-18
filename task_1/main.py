@@ -8,10 +8,9 @@ while i <6:
     a = str(input("Введите элемнт в список "))
     spisok.append(a)
     i += 1
-print(spisok)
 for i in spisok:
-    if "а" == i:
-        c += 1
-        print(c)
-    else:
-        print("Буквы а нет в списке")
+   if 'а' in i.lower():
+       c +=1
+print(f"в списке {spisok} есть {c} строк содержащих букву а")
+
+
