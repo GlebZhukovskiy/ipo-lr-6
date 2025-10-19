@@ -1,18 +1,28 @@
-import random
+import random #добавляет билиотеку рандома
 
-num =  [-3, -5, -2, -12, 0, 15, 4, 7, 2]
+matrix = [] #создает список
+num =  [-3, -5, -2, -12, 0, 15, 4, 7, 2]    #список с нужными нам элементами
+c = 0   #создает переменную
+sum = 0 #создает переменную
 
-a = random.randint(4, 8)
-b = random.randint(4, 8)
+a = random.randint(4, 8)    #генерирует случайное число от 4 до 8
+r = random.randint(4, 8)    #генерирует случайное число от 4 до 8
 
-matrix = []
+while c < r:    #цикл до тех пор пока с < r
+    b = [random.choice(num) for i in range(a)]  #создает список со случайными значениями из списка num
+    matrix.append(b)    #добавляет в матрицу 
+    c +=1   #прибавляет 1
 
-for i in range(a):
-    c = []
-    for j in range(b):
-        c.append(num[(i * b + j) % len(num)])
-    matrix.append(c)
-print(matrix)
+print(f"ваша матрица: {matrix}")   #выводит инфу
 
-for c in matrix:
+print("Сумма всех четных элементов: ")  #выводит инфу
+
+for i in matrix:    #перебирает списки в матрице
+    for number in i:    #перебирает значения в списках
+        if number % 2 == 0: #услове оператора ветвления
+            sum += number   #считает сумму
+print(sum)  #выводит инфу
+
+
+
     
